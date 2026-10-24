@@ -1,6 +1,51 @@
-# Python Course
+# Python Course Basics
 
 [Python Link](https://www.w3schools.com/python/default.asp)
+
+
+# 🐍 Python Learning Tracker
+**Progress: 25/31 Completed**
+
+## A. Python Foundations
+- [x] Python Syntax
+- [x] Python Output
+- [x] Python Comments
+- [x] Python Variables
+- [x] Python Data Types
+- [x] Python Numbers
+- [x] Python Casting
+- [x] Python Strings
+- [x] Python Booleans
+- [x] Python Operators
+- [x] Python None
+- [x] Python String Formatting
+- [x] Python User Input
+
+## B. Data Structures and Control Flow
+- [ ] Python Lists
+- [ ] Python Tuples
+- [ ] Python Sets
+- [ ] Python Dictionaries
+- [ ] Python If...Else
+- [ ] Python Match
+- [ ] Python While Loops
+- [ ] Python For Loops
+- [ ] Python Range
+
+## C. Functions and Working with Data
+- [ ] Python Functions
+- [ ] Python Arrays
+- [ ] Python Iterators
+- [ ] Python Modules
+- [ ] Python Dates
+- [ ] Python Math
+- [ ] Python JSON
+- [ ] Python RegEx
+
+## D. Practical Python Environment
+- [ ] Python PIP
+- [ ] Python Try...Except
+- [ ] Python VirtualEnv
 
 
 # 🐍 Python Intensive Intensive Crash Course Schedule
