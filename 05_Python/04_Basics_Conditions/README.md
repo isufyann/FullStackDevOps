@@ -87,7 +87,9 @@ This is useful for short assignments, but ordinary `if...else` is clearer for co
 
 ## Topic 16 — Python Match
 
-match is Python's pattern-matching statement, introduced in Python 3.10. It can select behavior based on a value or pattern.
+`match` is Python's pattern-matching statement, introduced in Python 3.10. It can select behavior based on a value or pattern.
+
+***I think match and switch statement is same working. We've to explore more.***
 
 ### 16.1 Basic example
 
