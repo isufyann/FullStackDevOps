@@ -9,6 +9,49 @@ Today's learning objectives
 - Topic 13: Python Sets
 - Topic 14: Python Dictionaries
 
+
+In Python, lists, tuples, sets, and dictionaries are the four built-in data structures used to store collections of data. Each has unique properties regarding ordering, mutability, and how elements are accessed.
+
+|Data Structure	|Syntax	|Ordered?	|Mutable? (Modifiable)	|Allows Duplicates?	|Core Use Case|
+|-|-|-|-|-|-|
+|List|	[a, b, c] |	Yes|	Yes|	Yes|	General data storage, stacks, and sequential loops. |
+|Tuple|	(a, b, c) |	Yes|	No|	Yes|	Fixed coordinates, dictionary keys, and read-only records. |
+|Set|	{a, b, c}|	No|	Yes|	No|	Removing duplicates and fast membership testing (in). |
+|Dictionary|	{k: v}|	Yes (3.7+)|	Yes|	Keys: No / Values: Yes|	JSON parsing, databases, and lightning-fast key lookups. |
+
+## 📋 Lists
+
+Lists are dynamic arrays, making them highly flexible for collections where order matters and data might change. 
+
+•	Syntax: fruits = ["apple", "banana", "cherry"] <br>
+•	Key Feature: Accessed via numerical indices starting at 0. <br>
+•	Common Methods: .append() (add to end), .pop() (remove last), and .sort(). <br>
+
+## 🔒 Tuples
+
+Tuples are essentially "locked" lists. Once created, their items cannot be changed, added, or removed.
+
+•	Syntax: point = (10, 20) (Note: A single-item tuple needs a trailing comma: (5,)). [1, 2] <br>
+•	Key Feature: Because they are immutable, they are "hashable" and can be used as keys in a dictionary. [1, 2] <br>
+•	Common Methods: Only supports .count() and .index().<br>
+
+## ⚡ Sets
+
+Sets store unordered collections of entirely unique items.
+
+•	Syntax: unique_ids = {1, 2, 3} <br>
+•	Key Feature: Finding out if an item is inside a set happens almost instantly (O(1) time complexity), regardless of size. <br>
+•	Common Methods: .add(), .remove(), and mathematical operations like .union() and .intersection(). <br>
+
+## 🔑 Dictionaries
+
+Dictionaries store data in key: value pairs, operating like a real-world phonebook or database record. 
+
+•	Syntax: user = {"name": "Alice", "age": 25} <br>
+•	Key Feature: You retrieve values using their unique keys rather than an index number. <br>
+•	Common Methods: .keys(), .values(), .items(), and .get() <br>
+
+
 ## Part A — Python Collections
 Collections let you store multiple values in a single variable.
 
