@@ -13,7 +13,7 @@ Today's learning objectives
 In Python, lists, tuples, sets, and dictionaries are the four built-in data structures used to store collections of data. Each has unique properties regarding ordering, mutability, and how elements are accessed.
 
 |Data Structure	|Syntax	|Ordered?	|Mutable? (Modifiable)	|Allows Duplicates?	|Core Use Case|
-|-|-|-|-|-|-|
+|---------------|--------|----------|-----------------------|-------------------|-------------|
 |List|	[a, b, c] |	Yes|	Yes|	Yes|	General data storage, stacks, and sequential loops. |
 |Tuple|	(a, b, c) |	Yes|	No|	Yes|	Fixed coordinates, dictionary keys, and read-only records. |
 |Set|	{a, b, c}|	No|	Yes|	No|	Removing duplicates and fast membership testing (in). |
