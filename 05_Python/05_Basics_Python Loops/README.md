@@ -146,9 +146,89 @@ Output:
 3 mango
 ```
 
+### Nested Loops
+A nested loop is a loop inside another loop.
+```code
+for row in range(1, 4):
+    for col in range(1, 3):
+        print(row, col)
+```
+
+The inner loop completes its iterations for each iteration of the outer loop.
+Nested loops are useful for tables and grids, but they can become slow when processing large datasets.
+
+### Table print 1 to 10
+```code
+for table in range(2,10):
+  for row in range(1,11):
+    print(f"{table} * {row}= {table*row}")
+  print(f"Table of {table} completed.")
+```
+### 18.6 Advanced example: search for a value
+```code
+numbers=[10,20,30,40,50]
+target=30
+for number in numbers:
+  if number==target:
+    print("Found")
+    break
+else:
+    print("Not Found")
+```
+
+Here, `else` runs only if the loop completes without `break`.
+## Topic 19 — Python Range
+The `range()` function generates a sequence of integers, commonly used with loops.
+### 19.1 One argument
+```
+for number in range(5):
+    print(number)
+```
+Output: `0,1, 2, 3, 4, 5`
+### 19.2 Two argument
+```
+for number in range(1, 6):
+    print(number)
+```
+Output: `1, 2, 3, 4, 5`
+### 19.3 Three argument
+```
+for number in range(0, 10,2):
+    print(number)
+```
+Output: `2,4,6,8,10`
+### 19.4 Count Backward
+```code
+for number in range(5, 0, -1):
+    print(number)
+```
+Output: `5, 4, 3, 2, 1`
+***The step must be negative when counting down toward a smaller endpoint.***
+```
+for number in range(10,0,-2):
+  print(number)
+```
+Output: `10,9,8,7,6,5, 4, 3, 2, 1`
+
+### 19.5 convert range into list
+```
+numbers=list(range(1,10))
+print(numbers)
+```
+Output: `[1, 2, 3, 4, 5]`
+Unlike a list, a `range` object represents a sequence without storing every generated number individually.
+### 19.6 Practical example: multiplication table
+```
+number = 7
+
+for i in range(1, 11):
+    print(f"{number} x {i} = {number * i}")
+```
+This combines loops, ranges, arithmetic, and string formatting.
+
+		
+
 
 
 
 <br>
-
-
