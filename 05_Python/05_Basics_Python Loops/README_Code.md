@@ -5,32 +5,29 @@ These 10 projects are based only on the topics you've learned so far: Python syn
 
 ***Your rule: Try to solve each project yourself before asking me for the solution. I've included requirements, hints, and sample outputs, but no complete solutions.***
 
+**Progress: 25/31 Completed**
 
-Your practice tracker
-Projects completed
-1/10
+- [x] 1. Student Result System — Easy
+
+- [ ] 2. Simple Calculator — Easy
+
+- [ ] 3. Number Guessing Game — Easy
+
+- [ ] 4. Multiplication Table Generator — Easy
+
+- [ ] 5. Shopping Cart and Bill — Easy
+
+- [ ] 6. Password Strength Checker — Easy–Medium
+
+- [ ] 7. Duplicate Remover — Medium
+
+- [ ] 8. Student Management System — Medium
+
+- [ ] 9. Bank Account Simulator — Medium
+
+- [ ] 10. Quiz Application — Medium
 
 
-
-[x] 1. Student Result System — Easy
-
-[ ] 2. Simple Calculator — Easy
-
-[ ] 3. Number Guessing Game — Easy
-
-[ ] 4. Multiplication Table Generator — Easy
-
-[ ] 5. Shopping Cart and Bill — Easy
-
-[ ] 6. Password Strength Checker — Easy–Medium
-
-[ ] 7. Duplicate Remover — Medium
-
-[ ] 8. Student Management System — Medium
-
-[ ] 9. Bank Account Simulator — Medium
-
-[ ] 10. Quiz Application — Medium
 
 ## Mini-project — Student Result Management System
 Build this program using the concepts from today's lesson.
