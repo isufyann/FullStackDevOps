@@ -29,7 +29,9 @@ These 10 projects are based only on the topics you've learned so far: Python syn
 
 
 
-## Mini-project — Student Result Management System
+## Mini-projects
+
+### Project 1 - Student Result Management System
 Build this program using the concepts from today's lesson.
 
 Requirements:
@@ -65,13 +67,62 @@ avg_students=sum_of_students/length_of_students
 print(f"Length of students is {length_of_students}")
 print(f"Sum of students is {sum_of_students}")
 print(f"Average of students is {avg_students}")
-
-
-# 1. Loop through the dictionary
-# 2. Check each student's result
-# 3. Print the result
-# 4. Calculate the class average
 ```
+
+## Project 2 — Simple Calculator
+
+Concepts: Operators, user input, casting, match, conditions.
+
+Create a calculator that performs addition, subtraction, multiplication, and division.
+
+Requirements
+- Ask for two numbers.
+- Ask the user to choose an operator: +, -, *, or /.
+- Use match to select the operation.
+- Handle division by zero.
+- Display an error for an invalid operator.
+
+```code
+firstNumber=int(input("Enter first number"))
+secondNumber=int(input("Enter 2nd number"))
+
+operator = input("Choose an operator (+, -, *, /,//,&,**): ")
+
+match operator:
+  case "+":
+    print(f"The Sum is: {firstNumber+secondNumber}")
+  case "-":
+    print(f"The Minus is: {firstNumber-secondNumber}")
+  case "*":
+    print(f"The Mulitply is: {firstNumber*secondNumber}")
+  case "/":
+    print(f"The Division is: {firstNumber/secondNumber}")
+  case "//":
+    print(f"The FloorDivision is: {firstNumber//secondNumber}")
+  case "%":
+    print(f"The Modulous is: {firstNumber%secondNumber}")
+  case "**":
+    print(f"The Modulous is: {firstNumber**secondNumber}")
+  case _:
+    print("Enter valid number")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <br>
