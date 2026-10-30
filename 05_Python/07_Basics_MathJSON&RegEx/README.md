@@ -245,16 +245,185 @@ response = """
     }
 }
 """
-
-result = json.loads(response)
-
-if result["status"] == "success":
+try:
+  result = json.loads(response)
+  if result["status"] == "success":
     user = result["data"]
     print(f"User: {user['name']}")
     print(f"ID: {user['user_id']}")
+  else:
+    print("User not found...")
+except json.JSONDecodeError:
+  print("Error found")
 ```
 
 This is similar to how you process a JSON response from a web API. In real applications, validate external data and handle missing fields safely.
+
+## Topic 3 — Python RegEx
+
+### 1. What is RegEx?
+RegEx means regular expressions. It's a way to search for, validate, extract, or replace text using patterns.
+
+Python provides regular expressions through the built-in re module.
+
+Examples of what RegEx can do:
+- Find numbers inside text.
+- Check whether text matches a particular format.
+- Extract email-like strings from a document.
+- Replace unwanted characters.
+- Find repeated patterns.
+
+### 2. Your first RegEx
+
+```
+import re
+
+text = "My age is 30"
+
+result = re.search(r"\d+", text)
+
+if result:
+    print(result.group())Explanation:
+```
+Output:
+`30`
+- re.search() looks for the first matching pattern.
+- r"\d+" means one or more digits.
+- .group() returns the matched text.
+
+The r prefix creates a raw string, which makes backslashes easier to use in regular expressions.
+
+### 3. Common RegEx symbols
+
+|Pattern|	Meaning|
+|-|-|
+|\d|	A digit|
+|\D|	A non-digit|
+|\w|	A word character|
+|\s|	Whitespace|
+|.|	Any character except a newline by default|
+|+|	One or more repetitions|
+|*|	Zero or more repetitions|
+|?|	Zero or one occurrence|
+|^|	Start of the string|
+|$|	End of the string|
+|[abc]|	One character from the set|
+|[A-Z]|	An uppercase ASCII letter|
+|{3}|	Exactly three repetitions|
+|{2,5}|	Between two and five repetitions|
+
+### 4. Find all matching values
+```
+import re
+
+text = "Orders: 101, 205, 309"
+
+numbers = re.findall(r"\d+", text)
+
+print(numbers)
+```
+Output:
+```
+['101', '205', '309']
+```
+`findall() returns all non-overlapping matches as a list of strings.`
+
+### 5. Check a pattern at the start or full string
+```
+import re
+
+print(bool(re.match(r"Python", "Python is easy")))
+print(bool(re.fullmatch(r"\d{4}", "2026")))
+print(bool(re.fullmatch(r"\d{4}", "2026abc")))
+```
+Output:
+```
+True
+True
+False
+```
+
+- match() checks at the beginning.
+- fullmatch() requires the entire string to match.
+- search() finds a match anywhere in the string.
+
+### 6. Replace text
+```
+import re
+text = "My phone number is 03001234567"
+hidden = re.sub(r"\d", "*", text)
+print(hidden)
+```
+`My phone number is ***********`
+
+This replaces every digit with an asterisk.
+
+### 7. Practical example: extract email-like text
+
+```
+import re
+
+text = """
+Contact Ali at ali@example.com
+or Sara at sara123@example.org
+"""
+
+pattern = r"\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b"
+
+emails = re.findall(pattern, text)
+
+print(emails)
+```
+
+```
+['ali@example.com', 'sara123@example.org']
+```
+
+This is a useful introductory pattern, but it doesn't validate every possible valid email address. For account registration, use appropriate validation and confirmation rather than relying on a regex alone.
+
+### 8. Practical example: validate a simple Pakistani mobile number
+
+For a basic exercise accepting numbers formatted as 03 followed by nine digits:
+
+```
+import re
+
+phone = input("Enter mobile number: ").strip()
+
+pattern = r"03\d{9}"
+
+if re.fullmatch(pattern, phone):
+    print("Format looks valid")
+else:
+    print("Invalid number format")
+```
+
+This checks the format only; it doesn't verify that the number is assigned, active, or belongs to the person entering it.
+
+### 9. Advanced: capturing groups
+Parentheses allow you to capture parts of a match.
+
+```
+import re
+
+date_text = "30-10-2026"
+
+pattern = r"(\d{2})-(\d{2})-(\d{4})"
+
+result = re.fullmatch(pattern, date_text)
+
+if result:
+    day, month, year = result.groups()
+    print("Day:", day)
+    print("Month:", month)
+    print("Year:", year)
+```
+
+Capturing groups are useful when extracting structured information from text.
+
+
+
+
 
 
 
