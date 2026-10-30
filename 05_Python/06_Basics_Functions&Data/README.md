@@ -255,6 +255,238 @@ print(next(iterator))
 print(next(iterator))
 ```
 
+### To learn topics later
+1. How for loops use iterators
+2. Build your own iterator
+3. Generators — a simpler approach
+4. Practical example: generate squares
+
+## Topic 23 — Python Modules
+
+### 1. What is a module?
+A module is a Python file containing reusable code, such as functions, classes, and variables.
+
+Python provides built-in modules, and you can create your own modules.
+
+### 2. Import a built-in module
+
+```
+import math
+
+print(math.sqrt(64))
+print(math.pi)
+```
+
+Output:
+```
+8.0
+3.141592653589793
+```
+
+The `math` module provides mathematical functions and constants.
+
+
+### 3. Import selected functions
+
+```
+from math import sqrt, ceil
+
+print(sqrt(81))
+print(ceil(4.2))
+```
+
+**We can use an alias**
+```
+import math as m
+
+print(m.factorial(5))
+
+Output: 120
+```
+
+***Avoid from module import * in most application code because it can make names unclear and create conflicts.***
+
+### 4. Create your own module
+Create two files in the same folder.
+
+```</> calculator.py```
+
+```
+def add(a, b):
+    return a + b
+
+def multiply(a, b):
+    return a * b
+```
+
+```</> main.py```
+
+```
+import calculator
+
+print(calculator.add(10, 20))
+print(calculator.multiply(5, 4))
+```
+
+Run `main.py` from the terminal:
+
+```python main.py```
+
+Output:
+```
+30
+20
+```
+
+Python finds `calculator.py` because it is in the same project folder.
+
+
+
+### 6. Module vs. package
+
+- Module: Usually one .py file.
+- Package: A way to organize related modules into a directory structure.
+
+Example:
+```
+my_project/
+    main.py
+    utilities/
+        __init__.py
+        calculator.py
+        formatting.py
+```
+
+This organization is useful when your applications become larger.
+
+## Topic 24 — Python Dates
+
+Python's built-in datetime module lets you work with dates and times.
+
+```
+from datetime import date
+
+today = date.today()
+
+print(today)
+print(today.year)
+print(today.month)
+print(today.day)
+```
+The displayed date depends on your computer's local date.
+
+### 2. Create a specific date
+```
+from datetime import date
+
+birthday = date(1996, 5, 15)
+
+print(birthday)
+print(birthday.year)
+```
+
+Dates use the format year, month, day when constructed.
+
+### 3. Get current date and time
+
+```
+from datetime import datetime
+
+now = datetime.now()
+
+print(now)
+print(now.year)
+print(now.hour)
+print(now.minute)
+```
+`datetime.now()` uses the local system's time zone unless a time zone is supplied.
+
+### 4. Format dates with strftime()
+
+```
+from datetime import datetime
+
+now = datetime.now()
+
+print(now.strftime("%d-%m-%Y"))
+print(now.strftime("%B %d, %Y"))
+print(now.strftime("%I:%M %p"))
+```
+
+Common formatting codes:
+
+|Code|	Meaning|
+|-|-|
+|%Y|	Four-digit year|
+|%m|	Month number|
+|%d|	Day of month|
+|%B|	Full month name|
+|%A|	Full weekday name|
+|%H|	Hour, 24-hour clock|
+|%I|	Hour, 12-hour clock|
+|%M|	Minutes|
+|%S|	Seconds|
+|%p|	AM or PM|
+
+### 5. Convert text into a date
+Use strptime() when a date arrives as a string.
+
+```
+from datetime import datetime
+
+date_text = "30-10-2026"
+
+parsed_date = datetime.strptime(date_text, "%d-%m-%Y")
+
+print(parsed_date.date())
+```
+
+### 6. Date calculations with timedelta
+
+```
+from datetime import date, timedelta
+
+today = date.today()
+
+tomorrow = today + timedelta(days=1)
+next_week = today + timedelta(days=7)
+last_week = today - timedelta(days=7)
+
+print(tomorrow)
+print(next_week)
+print(last_week)
+```
+
+Calculate the number of days between dates:
+
+```
+from datetime import date
+
+start = date(2026, 1, 1)
+end = date(2026, 12, 31)
+
+difference = end - start
+
+print(difference.days)
+```
+
+### 7. Advanced concept: time zones
+For applications involving international users, use timezone-aware datetimes.
+
+```
+from datetime import datetime, timezone
+
+now_utc = datetime.now(timezone.utc)
+
+print(now_utc)
+```
+
+
+
+
+
+
+
 
 
 
