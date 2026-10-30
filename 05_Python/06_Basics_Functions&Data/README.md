@@ -110,9 +110,150 @@ Output:
 
 ***A function without an explicit return returns None.***
 
+## 6. Default parameters
+You can provide default values for parameters.
+```code
+def greet(name="Guest"):
+    print(f"Hello, {name}!")
 
+greet()
+greet("Ali")
+```
+Output:
+```
+Hello Sufyan
+Hello Ali
 
+```
 
+## 7. Keyword arguments
+You can specify arguments by parameter name.
+```
+def student(name,age,city):
+  print(f"{name} {age} {city}")
+
+student(
+    name="Sufyan",
+    age=25,
+    city="Pakpattan"
+)
+```
+***This is useful when functions have multiple parameters and you want calls to be clear.***
+
+## 8. Advanced arguments: *args and **kwargs
+Use *args when a function should accept a variable number of positional arguments.
+
+```
+def calculate_sum(*num):
+  return sum(num)
+print(calculate_sum(1,2,3))
+print(calculate_sum(1,2,3,4,5,6,7))
+```
+***Use **kwargs to accept a variable number of keyword arguments.***
+
+## 9. Scope: local and global variables
+A variable created inside a function is normally local to that function.
+A function can read a global variable:
+
+## 10. Lambda functions
+A lambda is a small anonymous function containing one expression.
+
+```
+square = lambda number: number ** 2
+
+print(square(5))  # 25
+```
+A lambda can also be used with sorting:
+
+```
+students = [
+    {"name": "Ali", "marks": 75},
+    {"name": "Sara", "marks": 92},
+    {"name": "Ahmed", "marks": 65}
+]
+
+students.sort(key=lambda student: student["marks"])
+
+print(students)
+```
+
+This sorts the students by marks in ascending order. For more complex logic, a regular def function is usually clearer.
+
+# Topic 21 — Python Arrays
+## 1. What is an array?
+An array stores multiple values under one variable name. In Python, you'll commonly encounter three related tools:
+- List: General-purpose collection that can contain different data types.
+- array module: Provides compact arrays whose elements share a numeric type.
+- NumPy array: Designed for efficient numerical computing, mathematical operations, and data analysis.
+
+### 1.1 Python list vs. array
+
+```
+numbers = [10, 20, 30, 40]
+
+print(numbers[0])  # 10
+numbers.append(50)
+```
+### 1.2 Using Python's built-in array module
+
+```
+import array
+
+numbers = array.array("i", [10, 20, 30, 40])
+
+numbers.append(50)
+
+print(numbers)
+print(numbers[0])
+```
+***Here, "i" specifies a signed integer element type. All elements must be compatible with that type.***
+
+### Python's built-in array doesn't support element-wise arithmetic in the same way NumPy does.
+
+For example, adding 10 to every element is simple with a list comprehension:
+
+```
+numbers = [10, 20, 30, 40]
+
+result = [n + 10 for n in numbers]
+
+print(result)
+```
+
+### 1.4 NumPy arrays — connection to your next step
+When you learn NumPy, you'll be able to perform numerical operations directly on arrays.
+
+```
+# Install NumPy in your terminal:
+# python -m pip install numpy
+
+import numpy as np
+
+numbers = np.array([10, 20, 30, 40])
+
+print(numbers + 10)
+print(numbers * 2)
+print(numbers.mean())
+```
+
+***Important:*** NumPy operations such as numbers + 10 apply to each element. Python lists behave differently: [10, 20] * 2 repeats the list rather than multiplying each element.
+
+## Topic 22 — Python Iterators
+
+### 1. What is an iterator?
+An iterator gives you values one at a time. Iterators are useful when processing sequences, files, streams, or large amounts of data.
+
+An iterable is an object you can loop over. An iterator is an object that produces the next value when requested.
+
+```
+numbers = [10, 20, 30]
+
+iterator = iter(numbers)
+
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+```
 
 
 
